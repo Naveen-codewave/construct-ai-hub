@@ -2,7 +2,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { useRouter } from 'next/navigation';
+import { Link as RouterLink } from 'react-router-dom';
 
 interface LinkProps {
   href: string;
@@ -11,17 +11,10 @@ interface LinkProps {
 }
 
 const Link = ({ href, children, className }: LinkProps) => {
-  const router = useRouter();
-
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    router.push(href);
-  };
-
   return (
-    <a href={href} onClick={handleClick} className={className}>
+    <RouterLink to={href} className={className}>
       {children}
-    </a>
+    </RouterLink>
   );
 };
 

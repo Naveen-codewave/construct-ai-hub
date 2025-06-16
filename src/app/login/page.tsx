@@ -7,8 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Building, Smartphone, Shield } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import Link from '@/components/ui/link';
+import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 
 const LoginPage = () => {
@@ -17,7 +17,7 @@ const LoginPage = () => {
   const [step, setStep] = useState<'phone' | 'otp'>('phone');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const router = useRouter();
+  const navigate = useNavigate();
 
   const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ const LoginPage = () => {
         description: "Welcome to ConstructAI Dashboard",
       });
       // Redirect to dashboard based on user role
-      router.push('/dashboard');
+      navigate('/dashboard');
     }, 2000);
   };
 
