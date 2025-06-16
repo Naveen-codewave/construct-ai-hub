@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Building, Home, Wrench, Palette, CheckCircle, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import Link from '@/components/ui/link';
 
 const ServicesPage = () => {
   const services = [
