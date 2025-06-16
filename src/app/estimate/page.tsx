@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState } from 'react';
@@ -10,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Building, Calculator, Phone, Mail, MapPin } from 'lucide-react';
-import Link from 'next/link';
+import Link from '@/components/ui/link';
 import { useToast } from '@/hooks/use-toast';
 
 const EstimatePage = () => {
