@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -8,9 +9,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Building, Calculator, Phone, Mail, MapPin } from 'lucide-react';
-import Link from '@/components/ui/link';
+import { Calculator, Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import SEOHead from '@/components/seo/SEOHead';
+import Header from '@/components/layout/Header';
 
 const EstimatePage = () => {
   const [formData, setFormData] = useState({
@@ -80,25 +82,14 @@ const EstimatePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <Building className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-primary">ConstructAI</span>
-          </Link>
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link href="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
-            <Link href="/case-studies" className="text-foreground hover:text-primary transition-colors">Case Studies</Link>
-            <Link href="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
-            <Link href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
-          </nav>
-          <Link href="/login">
-            <Button variant="outline">Login</Button>
-          </Link>
-        </div>
-      </header>
+      <SEOHead
+        title="Free Construction Estimate - ConstructAI | Get Quote Today"
+        description="Get a free, detailed construction estimate for your project. Professional consultation and competitive pricing for residential and commercial construction."
+        keywords="construction estimate, free quote, building estimate, construction cost, project estimate"
+        canonical="/estimate"
+      />
+
+      <Header />
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
