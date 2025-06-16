@@ -7,6 +7,7 @@ import Login from './app/login/page';
 import Services from './app/services/page';
 import Dashboard from './app/dashboard/page';
 import Estimate from './app/estimate/page';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/estimate" element={<Estimate />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
